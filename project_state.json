@@ -1,0 +1,48 @@
+{
+    "schemaVersion": "1.0.0",
+    "projectStateVersion": 3,
+    "summary": "Build a landing page hero section with a generated realistic futuristic dark full-screen background, maintaining a glassmorphism style with clear readable text.",
+    "architectural_notes": [
+        "Hero: use full-screen generated futuristic dark background image; place key text inside a glassmorphism card/overlay to preserve readability."
+    ],
+    "known_issues": [],
+    "isFixRequest": false,
+    "imageRequirements": "## Required Images\n- Realistic futuristic dark full-screen background image with advanced sci-fi architectural/technological detail, cinematic lighting, and subtle depth (hero-futuristic-dark-bg.dim_1920x1080.png)",
+    "existing_features": [
+        {
+            "id": "feature-generate-a-realistic-advanced-looking-futuristic-dark-full-screen-hero-background-image-and-add-it-as-a-static-asset-under-frontend-public-assets-generated",
+            "title": "Generate a realistic, advanced-looking, futuristic dark full-screen hero background image and add it as a static asset under frontend/public/assets/generated.",
+            "reqIds": [
+                "REQ-1"
+            ],
+            "version": 1
+        },
+        {
+            "id": "feature-update-the-hero-section-to-use-the-new-generated-futuristic-dark-background-image-as-the-base-layer-while-preserving-the-existing-glassmorphism-hero-panel-and-ensuring-the-hero-headline-subtext-remain-clearly-readable-on-all-viewport-sizes",
+            "title": "Update the hero section to use the new generated futuristic dark background image as the base layer, while preserving the existing glassmorphism hero panel and ensuring the hero headline/subtext remain clearly readable on all viewport sizes.",
+            "reqIds": [
+                "REQ-2"
+            ],
+            "version": 1
+        },
+        {
+            "id": "feature-centralize-the-new-hero-background-image-reference-in-the-shared-frontend-src-config-assets-ts-file-and-use-that-constant-from-the-hero-section-implementation",
+            "title": "Centralize the new hero background image reference in the shared frontend/src/config/assets.ts file and use that constant from the hero section implementation.",
+            "reqIds": [
+                "REQ-3"
+            ],
+            "version": 1
+        }
+    ],
+    "new_feature_requests": [
+        {
+            "id": "AR-1",
+            "summary": "Add generated realistic futuristic dark full-screen hero background while maintaining glassmorphism; ensure text remains clear (text inside glassy card/overlay).",
+            "reqIds": [],
+            "status": "pending"
+        }
+    ],
+    "projectName": "Add realistic futuristic dark hero background image while preserving glassmorphism and text clarity",
+    "clarification_mode": "instant",
+    "clarification_rounds": 0
+}

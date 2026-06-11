@@ -1,0 +1,59 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Futuristic dark hero background image with preserved glassmorphism and legible hero text",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Add a new realistic futuristic dark hero background image as a generated static asset.",
+      "acceptanceCriteria": [
+        "A new generated image file exists at frontend/public/assets/generated/hero-futuristic-dark-bg.dim_1920x1080.png",
+        "The generated image is visually dark, realistic, and futuristic (not flat/abstract-only), suitable for a full-screen hero background"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/hero-futuristic-dark-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated realistic futuristic dark full-screen hero background image as a static asset at this exact path and filename (1920x1080)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Render the new hero background image full-screen behind hero content while keeping glass panel and text highly readable, and keeping existing animated overlays subtle.",
+      "acceptanceCriteria": [
+        "Hero background renders the new static image at full-screen size behind the hero content (no tiling, maintains cover behavior, and remains visually crisp)",
+        "The glass-panel container remains glassmorphism (blur + translucent) and sits above the background image",
+        "Hero headline and subtext have sufficient contrast/legibility against the new background (no parts become hard to read on common desktop/mobile breakpoints)",
+        "Existing subtle animated background/parallax effects (AnimatedBackground + radial overlay) do not overpower the new image; they remain subtle or are appropriately blended/toned down so the image still reads as the primary background"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Update the hero section layering so the new futuristic dark image is the base full-screen background (cover/center/no-repeat), add/adjust a subtle dark scrim or gradient overlay as needed for headline/subtext contrast across breakpoints, and reduce/blend the existing AnimatedBackground canvas and radial parallax overlay so they remain subtle and do not overpower the image."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Centralize the new hero background image URL in the shared assets config and reference it from the hero section.",
+      "acceptanceCriteria": [
+        "frontend/src/config/assets.ts exports a new constant for the generated futuristic dark hero background image URL",
+        "Hero section uses the exported constant rather than an inline hardcoded string path"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/config/assets.ts",
+          "operation": "modify",
+          "description": "Add and export a new asset URL constant for the generated hero background image pointing to frontend/public/assets/generated/hero-futuristic-dark-bg.dim_1920x1080.png (using the existing base-path-aware helper)."
+        },
+        {
+          "path": "frontend/src/components/landing/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Import and use the new exported asset constant from frontend/src/config/assets.ts as the background image source instead of any inline string path."
+        }
+      ]
+    }
+  ]
+}

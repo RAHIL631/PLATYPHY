@@ -1,0 +1,93 @@
+{
+    "kind": "build_request",
+    "title": "Add realistic futuristic dark hero background image while preserving glassmorphism and text clarity",
+    "priority": "normal",
+    "requirements": [
+        {
+            "id": "REQ-1",
+            "text": "Generate a realistic, advanced-looking, futuristic dark full-screen hero background image and add it as a static asset under frontend/public/assets/generated.",
+            "target": "frontend",
+            "source": {
+                "messageIds": [
+                    "msg-user-1",
+                    "msg-user-2",
+                    "msg-user-3"
+                ],
+                "quotes": [
+                    "in the background in the hero section add some advanced picture so it look real and futuristic and please maintain the glassy",
+                    "1,2",
+                    "1,2,3"
+                ]
+            },
+            "acceptanceCriteria": [
+                "A new generated image file exists at frontend/public/assets/generated/hero-futuristic-dark-bg.dim_1920x1080.png",
+                "The generated image is visually dark, realistic, and futuristic (not flat/abstract-only), suitable for a full-screen hero background"
+            ]
+        },
+        {
+            "id": "REQ-2",
+            "text": "Update the hero section to use the new generated futuristic dark background image as the base layer, while preserving the existing glassmorphism hero panel and ensuring the hero headline/subtext remain clearly readable on all viewport sizes.",
+            "target": "frontend",
+            "source": {
+                "messageIds": [
+                    "msg-user-1",
+                    "msg-user-4"
+                ],
+                "quotes": [
+                    "in the background in the hero section add some advanced picture so it look real and futuristic and please maintain the glassy",
+                    "make surue the text shuld be clear"
+                ]
+            },
+            "acceptanceCriteria": [
+                "Hero background renders the new static image at full-screen size behind the hero content (no tiling, maintains cover behavior, and remains visually crisp)",
+                "The glass-panel container remains glassmorphism (blur + translucent) and sits above the background image",
+                "Hero headline and subtext have sufficient contrast/legibility against the new background (no parts become hard to read on common desktop/mobile breakpoints)",
+                "Existing subtle animated background/parallax effects (AnimatedBackground + radial overlay) do not overpower the new image; they remain subtle or are appropriately blended/toned down so the image still reads as the primary background"
+            ]
+        },
+        {
+            "id": "REQ-3",
+            "text": "Centralize the new hero background image reference in the shared frontend/src/config/assets.ts file and use that constant from the hero section implementation.",
+            "target": "frontend",
+            "source": {
+                "messageIds": [
+                    "msg-user-2",
+                    "msg-user-3"
+                ],
+                "quotes": [
+                    "1,2",
+                    "1,2,3"
+                ]
+            },
+            "acceptanceCriteria": [
+                "frontend/src/config/assets.ts exports a new constant for the generated futuristic dark hero background image URL",
+                "Hero section uses the exported constant rather than an inline hardcoded string path"
+            ]
+        }
+    ],
+    "constraints": [
+        "Do not modify files under frontend/src/components/ui (read-only).",
+        "Do not modify any paths listed in frontend.immutablePaths.",
+        "Use English for any user-facing text."
+    ],
+    "nonGoals": [
+        "Do not redesign other landing page sections beyond what is necessary to integrate the new hero background.",
+        "Do not add new backend APIs or change the Motoko backend state/schema."
+    ],
+    "imageRequirements": {
+        "required": [
+            "Realistic futuristic dark full-screen background image with advanced sci-fi architectural/technological detail, cinematic lighting, and subtle depth (hero-futuristic-dark-bg.dim_1920x1080.png)"
+        ],
+        "edits": []
+    },
+    "userProfileUpdate": {
+        "goalsToAdd": [],
+        "goalsToRemove": [],
+        "preferencesToAdd": [],
+        "preferencesToRemove": [],
+        "miscToAdd": [],
+        "miscToRemove": [],
+        "fieldsToSet": {},
+        "fieldsToDelete": []
+    }
+}

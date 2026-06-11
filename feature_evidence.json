@@ -1,0 +1,58 @@
+{
+    "kind": "feature_evidence_report",
+    "features": [
+        {
+            "featureId": "feature-generate-a-realistic-advanced-looking-futuristic-dark-full-screen-hero-background-image-and-add-it-as-a-static-asset-under-frontend-public-assets-generated",
+            "featureTitle": "Generate a realistic, advanced-looking, futuristic dark full-screen hero background image and add it as a static asset under frontend/public/assets/generated.",
+            "files": [],
+            "components": [
+                "core-infrastructure@1.0.2",
+                "shadcn-ui@1.0.0",
+                "build-template-react@1.0.0",
+                "initial-app@1.0.0",
+                "github-export-icp-cli@1.0.0"
+            ],
+            "testIds": [
+                "REQ-1"
+            ],
+            "confidence": "high"
+        },
+        {
+            "featureId": "feature-update-the-hero-section-to-use-the-new-generated-futuristic-dark-background-image-as-the-base-layer-while-preserving-the-existing-glassmorphism-hero-panel-and-ensuring-the-hero-headline-subtext-remain-clearly-readable-on-all-viewport-sizes",
+            "featureTitle": "Update the hero section to use the new generated futuristic dark background image as the base layer, while preserving the existing glassmorphism hero panel and ensuring the hero headline/subtext remain clearly readable on all viewport sizes.",
+            "files": [
+                "frontend/src/components/landing/sections/HeroSection.tsx"
+            ],
+            "components": [
+                "core-infrastructure@1.0.2",
+                "shadcn-ui@1.0.0",
+                "build-template-react@1.0.0",
+                "initial-app@1.0.0",
+                "github-export-icp-cli@1.0.0"
+            ],
+            "testIds": [
+                "REQ-2"
+            ],
+            "confidence": "high"
+        },
+        {
+            "featureId": "feature-centralize-the-new-hero-background-image-reference-in-the-shared-frontend-src-config-assets-ts-file-and-use-that-constant-from-the-hero-section-implementation",
+            "featureTitle": "Centralize the new hero background image reference in the shared frontend/src/config/assets.ts file and use that constant from the hero section implementation.",
+            "files": [
+                "frontend/src/components/landing/sections/HeroSection.tsx",
+                "frontend/src/config/assets.ts"
+            ],
+            "components": [
+                "core-infrastructure@1.0.2",
+                "shadcn-ui@1.0.0",
+                "build-template-react@1.0.0",
+                "initial-app@1.0.0",
+                "github-export-icp-cli@1.0.0"
+            ],
+            "testIds": [
+                "REQ-3"
+            ],
+            "confidence": "high"
+        }
+    ]
+}
